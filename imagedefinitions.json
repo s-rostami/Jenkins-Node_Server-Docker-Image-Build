@@ -1,0 +1,5 @@
+{
+  "name": "node-server-task",
+  "imageUri": "773910315572.dkr.ecr.us-east-1.amazonaws.com/ntier"
+
+}
