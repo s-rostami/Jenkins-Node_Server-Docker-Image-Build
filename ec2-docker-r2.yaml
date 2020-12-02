@@ -1,0 +1,32 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: ""
+Resources:
+  EC2Instance:
+    Type: "AWS::EC2::Instance"
+    Properties:
+      ImageId: "ami-00ddb0e5626798373"
+      InstanceType: "t2.micro"
+      KeyName: !Sub "${AWS::Region}-key"
+      AvailabilityZone: !Sub "${AWS::Region}b"
+      Tenancy: "default"
+      SubnetId: "subnet-063dd014d61e4043d"
+      EbsOptimized: false
+      SecurityGroupIds:
+        - "sg-06a897ab196e96c73"
+      SourceDestCheck: true
+      BlockDeviceMappings:
+        - DeviceName: "/dev/sda1"
+          Ebs:
+            Encrypted: false
+            VolumeSize: 8
+            SnapshotId: "snap-0b071e09e1285af85"
+            VolumeType: "gp2"
+            DeleteOnTermination: true
+      UserData:
+        Fn::Base64: |
+          #!/bin/sh
+          sudo apt-get update
+          sudo curl -fsSL https://get.docker.com -o get-docker.sh
+          sudo sh get-docker.sh
+      HibernationOptions:
+        Configured: false
