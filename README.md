@@ -7,7 +7,7 @@
 
 ## Build Stage:
 ---
-The build stage can be devided into two parts. First creating a docker image and then creating a build step. the following files were created and pusehed into the github:
+The build stage can be devided into two parts. First creating a docker image and then creating a build step. The following files were created and pushed into github:
 - Dockerfile
 - buildspec.yml 
 - package.json
