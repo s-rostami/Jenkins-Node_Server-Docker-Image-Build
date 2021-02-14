@@ -9,7 +9,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          docker.build registry + ":$BUILD_NUMBER"
+          docker.build("node-server:$BUILD_NUMBER")
         }
       }
     }
