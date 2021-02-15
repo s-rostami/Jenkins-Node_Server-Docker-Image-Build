@@ -9,7 +9,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          sudo docker.build("node-server:$BUILD_NUMBER")
+          docker.build("node-server:$BUILD_NUMBER")
         }
       }
     }
