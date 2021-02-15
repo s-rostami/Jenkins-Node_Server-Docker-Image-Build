@@ -9,7 +9,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          docker.build("node-server:$BUILD_NUMBER")
+          dockerImage = docker.build("node-server:$BUILD_NUMBER")
         }
       }
     }
@@ -17,7 +17,7 @@ pipeline {
         steps{
             script{
                 docker.withRegistry("https://" + registry, "ecr:us-east-1:" + registryCredential) {
-                    node-server.push()
+                    dockerImage.push()
                 }
             }
         }
