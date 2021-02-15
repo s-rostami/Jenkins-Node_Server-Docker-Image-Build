@@ -9,15 +9,15 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          docker.build("node-server:$BUILD_NUMBER")
+          sudo docker.build("node-server:$BUILD_NUMBER")
         }
       }
     }
     stage('Deploy image') {
         steps{
             script{
-                docker.withRegistry("https://" + registry, "ecr:eu-central-1:" + registryCredential) {
-                    dockerImage.push()
+                sudo docker.withRegistry("https://" + registry, "ecr:eu-central-1:" + registryCredential) {
+                    sodu dockerImage.push()
                 }
             }
         }
