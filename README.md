@@ -2,16 +2,10 @@
 ---
 
   - Creating an image repository in AWS ECR
-  - Creating the build stage
+  - Installing Docker on the jenkins instance and adding the jenkins user into the docker group
+  - creating jenkins ecr credentials - the user which access id key is used needs permission added for access to ECR
+  - Creating the jenkinsfile - depository name on ecr and the docker inage name needs to be similar.
   - Deploying the docker image on AWS ECS
-
-## Build Stage:
----
-The build stage can be devided into two parts. First creating a docker image and then creating a build step. The following files were created and pushed into github:
-- Dockerfile
-- buildspec.yml 
-- package.json
-- index.js
 
 
 Note:
