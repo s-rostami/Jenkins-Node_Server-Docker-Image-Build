@@ -1,7 +1,7 @@
 pipeline {
   environment {
     registry = '773910315572.dkr.ecr.us-east-1.amazonaws.com/jenkins-node-server-docker-image-build'
-    registryCredential = 'AKIA3IMFGII2BR7GTBUD'
+    registryCredential = 'f141bd79-204b-4092-8cfd-a7901591f040'
     dockerImage = ''
   }
   agent any
