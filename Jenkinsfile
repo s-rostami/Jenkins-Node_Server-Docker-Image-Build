@@ -9,7 +9,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          dockerImage = docker.build("node-server:$BUILD_NUMBER")
+          dockerImage = docker.build("jenkins-node-server-docker-image-build:$BUILD_NUMBER")
         }
       }
     }
